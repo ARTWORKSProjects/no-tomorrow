@@ -185,6 +185,7 @@ function continue_script() {
 }
 
 function toggleFullScreen() {
+  document.getElementById('title').style.cursor = 'none';
   if ((document.fullScreenElement && document.fullScreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
     if (document.documentElement.requestFullScreen) {
       document.documentElement.requestFullScreen();
@@ -194,6 +195,7 @@ function toggleFullScreen() {
       document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
     }
   } else {
+    document.getElementById('title').style.cursor = 'auto';
     if (document.cancelFullScreen) {
       document.cancelFullScreen();
     } else if (document.mozCancelFullScreen) {
